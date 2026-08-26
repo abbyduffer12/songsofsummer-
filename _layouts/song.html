@@ -1,0 +1,31 @@
+---
+layout: default
+---
+<article class="song-page">
+  <div class="song-page__top section-wrap">
+    <a class="back-link" href="{{ '/' | relative_url }}">← Back to countdown</a>
+    <div class="song-page__grid">
+      <div class="song-cover" style="--accent: {{ page.accent | default: '#ff5e5b' }}">
+        <span class="song-cover__rank">{{ page.rank | prepend: "#" }}</span>
+        <span class="cover-placeholder cover-placeholder--large">Cover image<br>placeholder</span>
+      </div>
+      <div class="song-page__header">
+        <p class="eyebrow">Song {{ page.rank }} of 10</p>
+        <h1>{{ page.title }}</h1>
+        <p class="song-page__performer">{{ page.performer }}</p>
+        <div class="rating" aria-label="Rating: {{ page.rating | default: 'Add rating' }} out of 5 stars">
+          <span class="rating__label">Your rating</span>
+          <span class="rating__stars">{{ page.stars | default: "☆ ☆ ☆ ☆ ☆" }}</span>
+          <span class="rating__value">{{ page.rating | default: "— / 5" }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="review section-wrap">
+    <p class="eyebrow">The review</p>
+    <div class="review__body">
+      {{ content }}
+    </div>
+  </div>
+</article>

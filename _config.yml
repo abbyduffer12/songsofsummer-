@@ -1,0 +1,23 @@
+title: "Songs of the Summer"
+description: "A curated ranking of the songs that defined the summer."
+url: ""
+baseurl: ""
+lang: "en-US"
+
+collections:
+  songs:
+    output: true
+    permalink: /songs/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "songs"
+    values:
+      layout: "song"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
